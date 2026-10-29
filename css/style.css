@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Misure dei testi: si riducono da sole col restringersi della pagina.
+   clamp(minimo, valore fluido, massimo) -> il massimo è la misura del Figma */
+:root {
+  --fs-titolo: clamp(30px, 4.03vw, 58px);
+  --fs-sottotitolo: clamp(22px, 2.78vw, 40px);
+  --fs-testo: clamp(16px, 2.08vw, 30px);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: #111A15;
+  font-family: 'Syne', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Ogni slide mantiene le proporzioni 1440 x 1024 e si rimpicciolisce
+   con la pagina. Se il contenuto è più lungo, la slide si allunga. */
+.slide {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  aspect-ratio: 1440 / 1024;
+}
+
+/* ---------- SLIDE 1 ---------- */
+
+.slide-1 {
+  display: flex;
+  align-items: center;
+}
+
+.slide-1 .testi {
+  flex: 0 0 52%;
+}
+
+.slide-1 .titolo-verde {
+  font-size: var(--fs-titolo);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.019em;
+  color: #5F906E;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 2.7%;
+}
+
+.slide-1 .titolo {
+  font-size: var(--fs-titolo);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.019em;
+  color: #FFFFFF;
+  padding: 10px;
+  max-width: 88%;
+}
+
+.slide-1 .testo {
+  font-size: var(--fs-testo);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.019em;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 100%;
+}
+
+.slide-1 .immagine {
+  flex: 1;
+  margin-left: 1.5%;
+  margin-top: 0.5%;
+}
+
+.slide-1 .immagine img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ---------- SLIDE 2 e 4 ---------- */
+
+.slide-2,
+.slide-4 {
+  display: flex;
+  align-items: flex-start;
+  padding: 3.82% 1.94% 0 1.94%;
+}
+
+.slide-2 .pannello,
+.slide-4 .pannello {
+  flex: 0 0 51.4%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slide-2 .titolo-verde {
+  font-size: var(--fs-titolo);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.019em;
+  color: #5F906E;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 100%;
+}
+
+.slide-4 .titolo-verde {
+  font-size: var(--fs-titolo);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.019em;
+  color: #5F906E;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 100%;
+}
+
+.slide-2 .sottotitolo-verde {
+  font-size: var(--fs-sottotitolo);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #5F906E;
+  padding: 10px;
+}
+
+.slide-4 .sottotitolo-verde {
+  font-size: var(--fs-sottotitolo);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  color: #5F906E;
+  padding: 0;
+  max-width: 90%;
+}
+
+.slide-2 .testo,
+.slide-4 .testo {
+  font-family: 'Syne', sans-serif;
+  font-size: var(--fs-testo);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 100%;
+}
+
+.slide-2 .lato-immagine,
+.slide-4 .lato-immagine {
+  flex: 0 0 44.7%;
+  margin-top: 15%;
+}
+
+.slide-2 .lato-immagine img,
+.slide-4 .lato-immagine img {
+  width: 100%;
+  aspect-ratio: 644 / 551;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ---------- SLIDE 3 ---------- */
+
+.slide-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111A15;
+}
+
+.slide-3 .fascia {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-3 .titolo-verde {
+  margin: 2% 0 0 0;
+  font-family: 'Syne', sans-serif;
+  font-size: var(--fs-titolo);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.011em;
+  color: #5F906E;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0;
+  width: 46.7%;
+}
+
+/* le 3 colonne stanno su una griglia da 3 parti uguali */
+.slide-3 .colonne {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1%;
+  align-items: start;
+  margin-top: 3%;
+  padding: 0 1.5%;
+}
+
+.slide-3 .colonna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* colonna centrale più bassa, ultima appena più bassa (come nel Figma) */
+.slide-3 .colonna.centro {
+  margin-top: min(9.4vw, 135px);
+}
+
+.slide-3 .colonna:last-child {
+  margin-top: min(0.8vw, 11px);
+}
+
+.slide-3 .colonna .sottotitolo-verde {
+  font-family: 'Syne', sans-serif;
+  font-size: var(--fs-sottotitolo);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5F906E;
+  text-align: center;
+  padding: 10px;
+  width: fit-content;
+}
+
+.slide-3 .colonna .testo {
+  font-size: var(--fs-testo);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 89%;
+}
+
+.slide-3 .sotto {
+  width: 30.8%;
+  padding: 0.7%;
+  margin-top: 6.2%;
+}
+
+.slide-3 .sotto img {
+  width: 100%;
+  aspect-ratio: 423 / 350;
+  object-fit: cover;
+  border-radius: 14.43px;
+}
+
+/* ---------- SLIDE 5 ---------- */
+
+.slide-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 23.8%;
+}
+
+.slide-5 .titolo-verde {
+  font-size: var(--fs-titolo);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #5F906E;
+  text-transform: uppercase;
+  padding: 10px;
+  text-align: center;
+}
+
+.sottotitolo-bianco {
+  font-size: var(--fs-sottotitolo);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+.slide-5 .sottotitolo-bianco {
+  margin-top: 11px;
+  text-align: center;
+}
+
+.slide-5 .testo {
+  font-family: 'Syne', sans-serif;
+  font-size: var(--fs-testo);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  padding: 10px;
+  margin-top: 6.6%;
+  max-width: 90%;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+  :root {
+    --fs-titolo: 30px;
+    --fs-sottotitolo: 22px;
+    --fs-testo: 16px;
+  }
+
+  .slide {
+    aspect-ratio: auto;
+    padding: 40px 20px;
+  }
+
+  .slide-1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .slide-1 .testi {
+    flex: none;
+    width: 100%;
+  }
+
+  .slide-1 .titolo-verde {
+    margin-bottom: 0;
+  }
+
+  .slide-1 .titolo {
+    max-width: 100%;
+  }
+
+  .slide-1 .immagine {
+    flex: none;
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+
+  .slide-2,
+  .slide-4 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .slide-2 .pannello,
+  .slide-4 .pannello {
+    flex: none;
+    width: 100%;
+  }
+
+  .slide-4 .sottotitolo-verde {
+    max-width: 100%;
+  }
+
+  .slide-2 .lato-immagine,
+  .slide-4 .lato-immagine {
+    flex: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .slide-3 .titolo-verde {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .slide-3 .colonne {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .slide-3 .colonna.centro,
+  .slide-3 .colonna:last-child {
+    margin-top: 0;
+  }
+
+  .slide-3 .colonna .testo {
+    width: 100%;
+  }
+
+  .slide-3 .sotto {
+    width: 100%;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .slide-5 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .slide-5 .testo {
+    margin-top: 30px;
+    max-width: 100%;
+  }
+}
